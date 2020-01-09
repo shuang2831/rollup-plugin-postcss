@@ -37,7 +37,7 @@ export default {
           sourceMap: this.sourceMap,
           importer: [
             (url, importer, done) => {
-              if (!moduleRe.test(url)) return done({ file: url })
+              if (!moduleRe.test(url)) return null
 
               const moduleUrl = url.slice(1)
               const partialUrl = getUrlOfPartial(moduleUrl)
